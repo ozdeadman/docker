@@ -95,7 +95,8 @@ ADD jupyter_config/jupyter_notebook_config.py /home/keras/.jupyter/jupyter_noteb
 ADD jupyter_config/jupyter_openssl_cert.key /home/keras/.certs/jupyter_openssl_cert.key
 ADD jupyter_config/jupyter_openssl_cert.pem /home/keras/.certs/jupyter_openssl_cert.pem
 
-ADD test_build.py /home/keras/test_build.py
+RUN mkdir /home/keras/tests 
+ADD tests/* /home/keras/tests/
 
 RUN mkdir -p /home/keras/src && \
     mkdir -p /home/keras/data && \
